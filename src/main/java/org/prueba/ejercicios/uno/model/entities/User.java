@@ -20,7 +20,7 @@ public class User {
     @SequenceGenerator(name = "pk_user", sequenceName = "seg_user", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "pk_user")
     @Column(name = "id", nullable = true, updatable = false, unique = true)
-    private long id;
+    private int id;
     @Column(name = "firstname")
     private String firstname;
     @Column(name = "lastname")
@@ -33,14 +33,14 @@ public class User {
     /**
      * @return the id
      */
-    public long getId() {
+    public int getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
