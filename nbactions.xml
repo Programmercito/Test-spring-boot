@@ -52,4 +52,12 @@
                 <exec.appArgs></exec.appArgs>
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-run</actionName>
+            <displayName>run</displayName>
+            <goals>
+                <goal>spring-boot:run</goal>
+                <goal>-Dspring-boot.run.profiles=dev</goal>
+            </goals>
+        </action>
     </actions>
