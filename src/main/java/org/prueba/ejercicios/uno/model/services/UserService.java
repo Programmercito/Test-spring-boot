@@ -1,5 +1,6 @@
 package org.prueba.ejercicios.uno.model.services;
 
+import java.util.List;
 import org.prueba.ejercicios.uno.model.entities.User;
 
 /**
@@ -14,5 +15,5 @@ public interface UserService {
 
     public User find(int id);
 
-    public User findAll(int pagina);
+    public List<User> findAll(int pagina);
 }
