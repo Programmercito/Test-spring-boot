@@ -10,6 +10,7 @@ import org.prueba.ejercicios.uno.model.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 /**
@@ -47,7 +48,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAll(int pagina) {
         List<User> resul = new ArrayList<User>();
-        PageRequest page = PageRequest.of(pagina, 10);
+       
+        PageRequest page = PageRequest.of(pagina, 10, Sort.by("id"));
         Page<User> findAll = data.findAll(page);
         findAll.forEach(resul::add);
 
