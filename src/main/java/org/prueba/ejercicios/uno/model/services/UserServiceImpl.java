@@ -47,14 +47,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAll(int pagina) {
         List<User> resul = new ArrayList<User>();
-        if (pagina == 0) {
-            Iterable<User> findAll = data.findAll();
-            findAll.forEach(resul::add);
-        } else {
-            PageRequest page = PageRequest.of(pagina, 10);
-            Page<User> findAll = data.findAll(page);
-            findAll.forEach(resul::add);
-        }
+        PageRequest page = PageRequest.of(pagina, 10);
+        Page<User> findAll = data.findAll(page);
+        findAll.forEach(resul::add);
+
         if (resul.isEmpty()) {
             throw new DontFoundException();
         } else {
